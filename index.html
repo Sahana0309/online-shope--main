@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f4; }
+        .container { width: 350px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); text-align: center; }
+        h2 { margin-bottom: 20px; }
+        .input-box { margin: 10px 0; position: relative; }
+        .input-box input { width: 100%; padding: 10px; padding-left: 40px; border: 1px solid #ccc; border-radius: 5px; outline: none; }
+        .input-box i { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: gray; }
+        .btn { width: 100%; padding: 10px; background: #ff6600; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        .btn:hover { background: #e65c00; }
+        .switch { margin-top: 10px; color: gray; }
+        .switch a { color: #ff6600; text-decoration: none; font-weight: bold; cursor: pointer; }
+        .switch a:hover { text-decoration: underline; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Login Form -->
+        <div id="login-form">
+            <h2>Login</h2>
+            <form action="login.php" method="POST">
+                <div class="input-box">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button class="btn" type="submit">Login</button>
+            </form>
+            <p class="switch">Don't have an account? <a href="javascript:void(0);" onclick="toggleForms()">Sign Up</a></p>
+        </div>
+
+        <!-- Sign-Up Form -->
+        <div id="signup-form" class="hidden">
+            <h2>Sign Up</h2>
+            <form action="register.php" method="POST">
+                <div class="input-box">
+                    <i class="fa fa-user"></i>
+                    <input type="text" name="full_name" placeholder="Full Name" required>
+                </div>
+                <div class="input-box">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button class="btn" type="submit">Sign Up</button>
+            </form>
+            <p class="switch">Already have an account? <a href="javascript:void(0);" onclick="toggleForms()">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleForms() {
+            document.getElementById("login-form").classList.toggle("hidden");
+            document.getElementById("signup-form").classList.toggle("hidden");
+        }
+    </script>
+
+</body>
+</html>

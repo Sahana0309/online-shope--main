@@ -1,0 +1,86 @@
+
+.navbar{
+    z-index: 10;
+}
+
+.card{
+    height: 320px;
+    position: relative;
+    padding: 10px;
+   
+}
+
+.card-img-top{
+    height: 150px;
+    width: 100%;
+    object-fit: contain;
+}
+.card h5{
+    font-size: 15px;
+}
+
+.card a{
+    position: absolute;
+    bottom: 5px;
+   
+    width: 90%;
+}
+
+.cart-btn{
+    position: fixed;
+    right: 3%;
+    bottom: 2%;
+    z-index: 1;
+}
+
+.cart-container{
+    width: 30%;
+    height: 100vh;
+    position: fixed;
+    padding: 20px;
+    top: 0;
+    right: 0;
+    background-color: white;
+    z-index: 50;
+    transform: translateX(110%);
+    transition: 0.5s;
+    overflow-y: scroll;
+
+}
+.cart-container::-webkit-scrollbar{
+    display: none;
+}
+
+.cart-image{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.cart{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+.cart-item{
+    border: 1px solid rgb(185, 177, 177);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width:768px) {
+    .cart-container{
+        width: 100%;
+    }
+}
+.play{
+    padding-left: 80%;
+}
+.apple{
+    padding-left: 60%;
+    margin-top: -40px;
+}
